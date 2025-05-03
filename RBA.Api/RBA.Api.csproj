@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="RBA.Api.sln" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="FastEndpoints" Version="5.35.0" />
     <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.3" />
