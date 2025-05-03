@@ -1,0 +1,6 @@
+@RBA.Api_HostAddress = http://localhost:5158
+
+GET {{RBA.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
