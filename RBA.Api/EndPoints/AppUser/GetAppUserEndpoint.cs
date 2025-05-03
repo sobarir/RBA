@@ -7,11 +7,11 @@ using RBA.Repository;
 
 namespace RBA.Api.EndPoints.AppUser;
 
-[HttpGet("appusers/{id}"), AllowAnonymous]
-public class GetAppUserEndpoint(IAppUserRepository repository) : Endpoint<EntityRequestById, Domain.Entities.AppUser>
+[HttpGet("usermes/{id}"), AllowAnonymous]
+public class GetAppUserEndpoint(IUserMesRepository repository) : Endpoint<EntityRequestById, Domain.Entities.UserMes>
 {
 
-  private readonly IAppUserRepository _repository = repository;
+  private readonly IUserMesRepository _repository = repository;
 
   public override async Task HandleAsync(EntityRequestById req, CancellationToken ct)
   {

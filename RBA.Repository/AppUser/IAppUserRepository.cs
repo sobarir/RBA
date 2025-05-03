@@ -1,6 +1,6 @@
 ﻿namespace RBA.Repository;
 
-public interface IAppUserRepository : IRepositoryBase<Domain.Entities.AppUser>
+public interface IUserMesRepository : IRepositoryBase<Domain.Entities.UserMes>
 {
 
 }

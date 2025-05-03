@@ -32,7 +32,7 @@ builder.Services.AddSingleton(fsqlFactory);
 //Repositories
 builder.Services.AddSingleton<IActionRepository, ActionRepository>();
 builder.Services.AddSingleton<IApplicationRepository, ApplicationRepository>();
-builder.Services.AddSingleton<IAppUserRepository, AppUserRepository>();
+builder.Services.AddSingleton<IUserMesRepository, UserMesRepository>();
 builder.Services.AddSingleton<IRoleActionRepository, RoleActionRepository>();
 builder.Services.AddSingleton<IRolePlantRepository, RolePlantRepository>();
 builder.Services.AddSingleton<IUserAllowedPlantRepository, UserAllowedPlantRepository>();

@@ -6,12 +6,12 @@ using RBA.Repository;
 
 namespace RBA.Api.EndPoints.AppUser;
 
-[HttpPost("appusers"), AllowAnonymous]
-public class CreateAppUserEndpoint(IAppUserRepository repository) : Endpoint<Domain.Entities.AppUser>
+[HttpPost("usermes"), AllowAnonymous]
+public class CreateAppUserEndpoint(IUserMesRepository repository) : Endpoint<Domain.Entities.UserMes>
 {
-  private readonly IAppUserRepository _repository = repository;
+  private readonly IUserMesRepository _repository = repository;
 
-  public override async Task HandleAsync(Domain.Entities.AppUser req, CancellationToken ct)
+  public override async Task HandleAsync(Domain.Entities.UserMes req, CancellationToken ct)
   {
 
     await _repository.CreateAsync(req);

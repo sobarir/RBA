@@ -2,8 +2,8 @@
 
 namespace RBA.Repository;
 
-public class AppUserRepository(IFreeSql sql, ILogger<AppUserRepository> logger) 
-  : RepositoryBase<Domain.Entities.AppUser>(sql, logger), IAppUserRepository
+public class UserMesRepository(IFreeSql sql, ILogger<UserMesRepository> logger) 
+  : RepositoryBase<Domain.Entities.UserMes>(sql, logger), IUserMesRepository
 {
 
 }

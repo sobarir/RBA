@@ -7,11 +7,11 @@ using RBA.Repository;
 
 namespace RBA.Api.EndPoints.AppUser;
 
-[HttpDelete("appusers/{id}"), AllowAnonymous]
-public class DeleteAppUserEndpoint(IAppUserRepository repository) : Endpoint<EntityRequestById>
+[HttpDelete("usermes/{id}"), AllowAnonymous]
+public class DeleteAppUserEndpoint(IUserMesRepository repository) : Endpoint<EntityRequestById>
 {
 
-  private readonly IAppUserRepository _repository = repository;
+  private readonly IUserMesRepository _repository = repository;
 
   public override async Task HandleAsync(EntityRequestById req, CancellationToken ct)
   {
