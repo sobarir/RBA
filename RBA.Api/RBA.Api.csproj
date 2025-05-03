@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <None Remove="log20250327.txt" />
+    <None Remove="log20250503.txt" />
   </ItemGroup>
 
   <ItemGroup>
