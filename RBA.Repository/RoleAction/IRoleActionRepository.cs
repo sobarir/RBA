@@ -5,5 +5,8 @@ namespace RBA.Repository;
 public interface IRoleActionRepository : IRepositoryBase<RoleAction>
 {
   Task<RoleAction> GetAsync(int role_id, int action_id);
+
+  Task<IEnumerable<RoleAction>> GetByRoleIdAsync(int role_id);
+
   Task<bool> DeleteAsync(int role_id, int action_id);
 }
