@@ -7,14 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Contracts\Responses\**" />
-    <Content Remove="Contracts\Responses\**" />
-    <EmbeddedResource Remove="Contracts\Responses\**" />
-    <None Remove="Contracts\Responses\**" />
+    <None Remove="log20250327.txt" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="log20250327.txt" />
+    <None Include="RBA.Api.sln" />
   </ItemGroup>
 
   <ItemGroup>
