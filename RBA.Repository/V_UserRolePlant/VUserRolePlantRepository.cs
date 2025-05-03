@@ -15,6 +15,13 @@ public class VUserRolePlantRepository(IFreeSql sql, ILogger<RepositoryBase<V_Use
       .ToListAsync();
   }
 
+  public async Task<IEnumerable<V_UserRolePlant>> GetAllByIdAsync(int user_role_id)
+  {
+    return await _sql.Select<V_UserRolePlant>()
+      .Where(a => a.User_Role_Id == user_role_id)
+      .ToListAsync();
+  }
+
   public override Task<bool> DeleteAsync(object? id)
   {
     throw new NotImplementedException();
