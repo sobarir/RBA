@@ -53,3 +53,5 @@ CodeCoverage/
 TestResult.xml
 nunit-*.xml
 /RBA.Api/log20250503.txt
+/.vs/RBA/v17
+/RBA.Api/.vs/RBA.Api
