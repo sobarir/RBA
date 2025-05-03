@@ -19,4 +19,11 @@ public class RolePlantRepository(IFreeSql sql, ILogger<RolePlantRepository> logg
       .ToListAsync();
   }
 
+  public async Task<IEnumerable<RolePlant>> GetAllByAppAsync(string application_cd)
+  {
+    return await _sql.Select<RolePlant>()
+      .Where(a => a.Application_Cd == application_cd)
+      .ToListAsync();
+  }
+
 }
