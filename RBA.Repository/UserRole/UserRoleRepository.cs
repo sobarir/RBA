@@ -15,6 +15,13 @@ public class UserRoleRepository(IFreeSql sql, ILogger<RepositoryBase<UserRole>> 
       .ToOneAsync();
   }
 
+  public async Task<UserRole> GetByIdAsync(int user_role_id)
+  {
+    return await _sql.Select<UserRole>()
+      .Where(a => a.User_Role_Id == user_role_id)
+      .ToOneAsync();
+  }
+
   public async Task<bool> DeleteAsync(int role_id, string user_cd)
   {
     _logger.LogInformation("DeleteAsync {role_id} and {user_cd}", role_id, user_cd);
