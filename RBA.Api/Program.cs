@@ -5,6 +5,7 @@ using Serilog;
 
 using RBA.Repository;
 using System.Text.Json;
+using RBA.Api.EndPoints.AD;
 
 var builder = WebApplication.CreateBuilder(args);
 var config = builder.Configuration;
@@ -60,6 +61,8 @@ builder.Services.AddCors(options =>
   });
 });
 
+builder.Services.AddScoped<IADUserProvider, ADUserProvider>();
+
 var app = builder.Build();
 
 app.UseFastEndpoints(c =>
@@ -83,6 +86,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseMiddleware<ADUserMiddleware>();
 
 //app.UseAuthentication();
 //app.UseAuthorization();

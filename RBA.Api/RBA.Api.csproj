@@ -9,15 +9,17 @@
   <ItemGroup>
     <None Remove="log20250327.txt" />
     <None Remove="log20250503.txt" />
+    <None Remove="log20250504.txt" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FastEndpoints" Version="5.35.0" />
+    <PackageReference Include="FastEndpoints" Version="6.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.3.0" />
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.4" />
     <PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
     <PackageReference Include="Serilog.Exceptions" Version="8.4.0" />
     <PackageReference Include="Serilog.Sinks.Async" Version="2.1.0" />
+    <PackageReference Include="System.DirectoryServices.AccountManagement" Version="9.0.4" />
   </ItemGroup>
 
   <ItemGroup>
