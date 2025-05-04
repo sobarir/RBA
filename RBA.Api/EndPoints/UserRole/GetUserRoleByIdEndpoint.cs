@@ -7,7 +7,7 @@ using RBA.Api.Contracts;
 
 namespace RBA.Api.EndPoints.UserRole;
 
-[HttpGet("userroles/transid/{user_role_id:int}"), AllowAnonymous]
+[HttpGet("userroles/transid/{id:int}"), AllowAnonymous]
 public class GetUserRoleByIdEndpoint(IUserRoleRepository repository) : Endpoint<EntityRequestById, Domain.Entities.UserRole>
 {
 

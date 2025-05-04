@@ -7,7 +7,7 @@ using RBA.Api.Contracts;
 
 namespace RBA.Api.EndPoints.RoleAction;
 
-[HttpGet("roleactions/role/{role_id:int}"), AllowAnonymous]
+[HttpGet("roleactions/role/{id:int}"), AllowAnonymous]
 public class GetAllRoleActionsByRoleIdEndpoint(IRoleActionRepository repository) : Endpoint<EntityRequestById, IEnumerable<Domain.Entities.RoleAction>>
 {
 
