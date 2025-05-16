@@ -142,4 +142,24 @@ public class ADUserProvider : IADUserProvider
     });
   }
 
+  public Task<string> CurrentDomainUser(HttpContext context)
+  {
+
+    return Task.Run(() =>
+    {
+
+      string? username = context.User.Identity?.Name;
+
+      if (string.IsNullOrWhiteSpace(username))
+      {
+        return "Not authenticated";
+      }
+
+      return username;
+
+    });
+
+
+  }
+
 }

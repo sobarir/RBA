@@ -13,7 +13,9 @@
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "windowsAuthentication": true,
+      "anonymousAuthentication": false
     },
     "http": {
       "commandName": "Project",

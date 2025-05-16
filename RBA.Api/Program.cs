@@ -1,5 +1,7 @@
 ﻿global using FluentValidation;
 
+using Microsoft.AspNetCore.Authentication.Negotiate;
+
 using FastEndpoints;
 using Serilog;
 
@@ -63,6 +65,16 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddScoped<IADUserProvider, ADUserProvider>();
 
+// Add Windows Authentication
+builder.Services.AddAuthentication(NegotiateDefaults.AuthenticationScheme)
+    .AddNegotiate();
+
+builder.Services.AddAuthorization(options =>
+{
+  // By default, all incoming requests require authentication
+  options.FallbackPolicy = options.DefaultPolicy;
+});
+
 var app = builder.Build();
 
 app.UseFastEndpoints(c =>
@@ -88,8 +100,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseMiddleware<ADUserMiddleware>();
 
-//app.UseAuthentication();
-//app.UseAuthorization();
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.Run();
 

@@ -16,10 +16,10 @@ public class ADUserMiddleware
 
   public async Task Invoke(HttpContext context, IADUserProvider userProvider, IConfiguration config)
   {
-    if (!(userProvider.Initialized))
-    {
-      await userProvider.Create(context, config);
-    }
+    //if (!(userProvider.Initialized))
+    //{
+    //  await userProvider.Create(context, config);
+    //}
     await next(context);
   }
 
