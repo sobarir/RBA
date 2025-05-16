@@ -142,7 +142,7 @@ public class ADUserProvider : IADUserProvider
     });
   }
 
-  public Task<string> CurrentDomainUser(HttpContext context)
+  public Task<ADUser?> GetCurrentADUser(HttpContext context)
   {
 
     return Task.Run(() =>
@@ -152,10 +152,11 @@ public class ADUserProvider : IADUserProvider
 
       if (string.IsNullOrWhiteSpace(username))
       {
-        return "Not authenticated";
+        return null;
       }
 
-      return username;
+      //System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+      return ADUser.CastToADUser(UserPrincipal.Current);
 
     });
 

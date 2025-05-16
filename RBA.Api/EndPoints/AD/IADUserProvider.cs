@@ -14,5 +14,5 @@ public interface IADUserProvider
   Task<List<ADUser>> GetDomainUsers();
   Task<List<ADUser>> FindDomainUser(string search);
 
-  Task<string> CurrentDomainUser(HttpContext context);
+  Task<ADUser?> GetCurrentADUser(HttpContext context);
 }
