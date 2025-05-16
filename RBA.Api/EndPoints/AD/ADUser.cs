@@ -28,7 +28,7 @@ public class ADUser
   public bool PasswordNotRequired { get; set; }
   public string? SamAccountName { get; set; }
   public string? ScriptPath { get; set; }
-  public SecurityIdentifier? Sid { get; set; }
+  //public SecurityIdentifier? Sid { get; set; }
   public string? Surname { get; set; }
   public bool UserCannotChangePassword { get; set; }
   public string? UserPrincipalName { get; set; }
@@ -87,7 +87,7 @@ public class ADUser
       PasswordNotRequired = user.PasswordNotRequired,
       SamAccountName = user.SamAccountName,
       ScriptPath = user.ScriptPath,
-      Sid = user.Sid,
+      //Sid = user.Sid,
       Surname = user.Surname,
       UserCannotChangePassword = user.UserCannotChangePassword,
       UserPrincipalName = user.UserPrincipalName,

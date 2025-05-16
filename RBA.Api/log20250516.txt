@@ -67,3 +67,9 @@ System.Exception: Error retrieving AD User
 [10:26:49 INF] Application started. Press Ctrl+C to shut down. <s:Microsoft.Hosting.Lifetime>
 [10:26:49 INF] Hosting environment: Development <s:Microsoft.Hosting.Lifetime>
 [10:26:49 INF] Content root path: C:\Rahmat\RBA\RBA.Api <s:Microsoft.Hosting.Lifetime>
+[15:59:34 INF] Registered 44 endpoints in 3.578 milliseconds. <s:FastEndpoints.StartupTimer>
+[15:59:34 INF] Now listening on: https://localhost:7211 <s:Microsoft.Hosting.Lifetime>
+[15:59:34 INF] Now listening on: http://localhost:5158 <s:Microsoft.Hosting.Lifetime>
+[15:59:34 INF] Application started. Press Ctrl+C to shut down. <s:Microsoft.Hosting.Lifetime>
+[15:59:34 INF] Hosting environment: Development <s:Microsoft.Hosting.Lifetime>
+[15:59:34 INF] Content root path: C:\Rahmat\RBA\RBA.Api <s:Microsoft.Hosting.Lifetime>
