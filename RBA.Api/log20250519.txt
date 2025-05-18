@@ -1,0 +1,53 @@
+[00:01:35 INF] Registered 45 endpoints in 3.116 milliseconds. <s:FastEndpoints.StartupTimer>
+[00:01:35 INF] Now listening on: https://localhost:7211 <s:Microsoft.Hosting.Lifetime>
+[00:01:35 INF] Now listening on: http://localhost:5158 <s:Microsoft.Hosting.Lifetime>
+[00:01:35 INF] Application started. Press Ctrl+C to shut down. <s:Microsoft.Hosting.Lifetime>
+[00:01:35 INF] Hosting environment: Development <s:Microsoft.Hosting.Lifetime>
+[00:01:35 INF] Content root path: C:\Rahmat\RBA\RBA.Api <s:Microsoft.Hosting.Lifetime>
+[00:01:44 ERR] An unhandled exception has occurred while executing the request. <s:Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware>
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+HTTP: GET /roleactions
+HTTP: GET roleactions
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+[00:02:11 INF] Registered 45 endpoints in 2.604 milliseconds. <s:FastEndpoints.StartupTimer>
+[00:02:12 INF] Now listening on: https://localhost:7211 <s:Microsoft.Hosting.Lifetime>
+[00:02:12 INF] Now listening on: http://localhost:5158 <s:Microsoft.Hosting.Lifetime>
+[00:02:12 INF] Application started. Press Ctrl+C to shut down. <s:Microsoft.Hosting.Lifetime>
+[00:02:12 INF] Hosting environment: Development <s:Microsoft.Hosting.Lifetime>
+[00:02:12 INF] Content root path: C:\Rahmat\RBA\RBA.Api <s:Microsoft.Hosting.Lifetime>
+[00:03:09 INF] Registered 45 endpoints in 463 milliseconds. <s:FastEndpoints.StartupTimer>
+[00:03:10 INF] Now listening on: https://localhost:7211 <s:Microsoft.Hosting.Lifetime>
+[00:03:10 INF] Now listening on: http://localhost:5158 <s:Microsoft.Hosting.Lifetime>
+[00:03:10 INF] Application started. Press Ctrl+C to shut down. <s:Microsoft.Hosting.Lifetime>
+[00:03:10 INF] Hosting environment: Development <s:Microsoft.Hosting.Lifetime>
+[00:03:10 INF] Content root path: C:\Rahmat\RBA\RBA.Api <s:Microsoft.Hosting.Lifetime>
+[00:05:39 INF] Registered 45 endpoints in 578 milliseconds. <s:FastEndpoints.StartupTimer>
+[00:05:39 INF] Now listening on: https://localhost:7211 <s:Microsoft.Hosting.Lifetime>
+[00:05:39 INF] Now listening on: http://localhost:5158 <s:Microsoft.Hosting.Lifetime>
+[00:05:39 INF] Application started. Press Ctrl+C to shut down. <s:Microsoft.Hosting.Lifetime>
+[00:05:39 INF] Hosting environment: Development <s:Microsoft.Hosting.Lifetime>
+[00:05:39 INF] Content root path: C:\Rahmat\RBA\RBA.Api <s:Microsoft.Hosting.Lifetime>
+[00:07:33 INF] Registered 45 endpoints in 545 milliseconds. <s:FastEndpoints.StartupTimer>
+[00:07:33 INF] Now listening on: https://localhost:7211 <s:Microsoft.Hosting.Lifetime>
+[00:07:33 INF] Now listening on: http://localhost:5158 <s:Microsoft.Hosting.Lifetime>
+[00:07:33 INF] Application started. Press Ctrl+C to shut down. <s:Microsoft.Hosting.Lifetime>
+[00:07:33 INF] Hosting environment: Development <s:Microsoft.Hosting.Lifetime>
+[00:07:33 INF] Content root path: C:\Rahmat\RBA\RBA.Api <s:Microsoft.Hosting.Lifetime>
+[00:10:35 INF] Registered 45 endpoints in 514 milliseconds. <s:FastEndpoints.StartupTimer>
+[00:10:36 INF] Now listening on: https://localhost:7211 <s:Microsoft.Hosting.Lifetime>
+[00:10:36 INF] Now listening on: http://localhost:5158 <s:Microsoft.Hosting.Lifetime>
+[00:10:36 INF] Application started. Press Ctrl+C to shut down. <s:Microsoft.Hosting.Lifetime>
+[00:10:36 INF] Hosting environment: Development <s:Microsoft.Hosting.Lifetime>
+[00:10:36 INF] Content root path: C:\Rahmat\RBA\RBA.Api <s:Microsoft.Hosting.Lifetime>
+[00:15:50 INF] Registered 45 endpoints in 2.735 milliseconds. <s:FastEndpoints.StartupTimer>
+[00:15:50 INF] Now listening on: https://localhost:7211 <s:Microsoft.Hosting.Lifetime>
+[00:15:50 INF] Now listening on: http://localhost:5158 <s:Microsoft.Hosting.Lifetime>
+[00:15:50 INF] Application started. Press Ctrl+C to shut down. <s:Microsoft.Hosting.Lifetime>
+[00:15:50 INF] Hosting environment: Development <s:Microsoft.Hosting.Lifetime>
+[00:15:50 INF] Content root path: C:\Rahmat\RBA\RBA.Api <s:Microsoft.Hosting.Lifetime>
