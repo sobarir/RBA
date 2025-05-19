@@ -1,22 +1,20 @@
-﻿using Microsoft.AspNetCore.Authorization;
-
-using FastEndpoints;
-
+﻿using FastEndpoints;
+using Microsoft.AspNetCore.Authorization;
+using RBA.Api.Contracts.Requests;
 using RBA.Repository;
-using RBA.Api.Contracts;
 
 namespace RBA.Api.EndPoints.UserRole;
 
-[HttpGet("userrolesinfo/user/{user}"), AllowAnonymous]
-public class GetUserAvailableRoleEndpoint(IVUserRolePlantRepository repository) : Endpoint<EntityRequestById, IEnumerable<Domain.Entities.V_UserAvailableRole>>
+[HttpGet("userrolesinfo/user/{user_cd}/app/{app_code}"), AllowAnonymous]
+public class GetUserAvailableRoleEndpoint(IVUserRolePlantRepository repository) : Endpoint<UserAvailableRoleRequest, IEnumerable<Domain.Entities.V_UserAvailableRole>>
 {
 
   private readonly IVUserRolePlantRepository _repository = repository;
 
-  public override async Task HandleAsync(EntityRequestById req, CancellationToken ct)
+  public override async Task HandleAsync(UserAvailableRoleRequest req, CancellationToken ct)
   {
 
-    var res = await _repository.GetAllUserAvailableRolesAsync(req.id);
+    var res = await _repository.GetAllUserAvailableRolesAsync(req.user_cd, req.app_code);
 
     if (res is null)
     {

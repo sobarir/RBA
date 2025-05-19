@@ -2,8 +2,8 @@
 
 public class UserAvailableRoleRequest
 {
-  public required string user { get; set; }
+  public required string user_cd { get; set; }
 
-  public required string app { get; set; }
+  public required string app_code { get; set; }
 
 }
