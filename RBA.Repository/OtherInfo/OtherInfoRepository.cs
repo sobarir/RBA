@@ -25,4 +25,11 @@ public class OtherInfoRepository(IFreeSql sql, ILogger<OtherInfoRepository> logg
 
   }
 
+  public async Task<List<V_UserRoleAllInfo>> GetAllInfoByIdAsync(int user_role_id)
+  {
+    return await _sql.Select<V_UserRoleAllInfo>()
+      .Where(a => a.User_role_id == user_role_id)
+      .ToListAsync();
+  }
+
 }
