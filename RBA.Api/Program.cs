@@ -42,6 +42,7 @@ builder.Services.AddSingleton<IUserAllowedPlantRepository, UserAllowedPlantRepos
 builder.Services.AddSingleton<IUserRoleRepository, UserRoleRepository>();
 builder.Services.AddSingleton<IVUserRolePlantRepository, VUserRolePlantRepository>();
 builder.Services.AddSingleton<IVApplicationRoleActionRepository, VApplicationRoleActionRepository>();
+builder.Services.AddSingleton<IOtherInfoRepository, OtherInfoRepository>();
 
 builder.Services.AddFastEndpoints(o => o.IncludeAbstractValidators = true);
 builder.Services.AddOpenApi();

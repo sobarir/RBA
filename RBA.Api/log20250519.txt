@@ -228,3 +228,9 @@ FROM            role_plant AS rp INNER JOIN
 [21:36:37 INF] Application started. Press Ctrl+C to shut down. <s:Microsoft.Hosting.Lifetime>
 [21:36:37 INF] Hosting environment: Development <s:Microsoft.Hosting.Lifetime>
 [21:36:37 INF] Content root path: C:\Rahmat\RBA\RBA.Api <s:Microsoft.Hosting.Lifetime>
+[22:01:22 INF] Registered 47 endpoints in 2.800 milliseconds. <s:FastEndpoints.StartupTimer>
+[22:01:23 INF] Now listening on: https://localhost:7211 <s:Microsoft.Hosting.Lifetime>
+[22:01:23 INF] Now listening on: http://localhost:5158 <s:Microsoft.Hosting.Lifetime>
+[22:01:23 INF] Application started. Press Ctrl+C to shut down. <s:Microsoft.Hosting.Lifetime>
+[22:01:23 INF] Hosting environment: Development <s:Microsoft.Hosting.Lifetime>
+[22:01:23 INF] Content root path: C:\Rahmat\RBA\RBA.Api <s:Microsoft.Hosting.Lifetime>
