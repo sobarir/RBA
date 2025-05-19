@@ -7,7 +7,7 @@ using RBA.Api.Contracts;
 
 namespace RBA.Api.EndPoints.Action;
 
-[HttpPost("actions"), AllowAnonymous]
+[HttpPost("emailtoapprover/{id:int}"), AllowAnonymous]
 public class SendEmailApprEndpoint(IUserRoleRepository repository) : Endpoint<EntityRequestById>
 {
   private readonly IUserRoleRepository _repository = repository;
