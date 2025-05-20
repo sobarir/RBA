@@ -7,6 +7,10 @@ public interface IOtherInfoRepository : IRepositoryBase<OtherInfo>
 
   Task<IEnumerable<OtherInfo>> GetAllAsync(string info_type, string info_name);
 
-  Task<List<V_UserRoleAllInfo>> GetAllInfoByIdAsync(int user_role_id);
+  Task<IEnumerable<OtherInfo>> GetAllByTypeAsync(string info_type);
+
+  Task<IEnumerable<OtherInfo>> GetSMTPInfoAsync();
+
+  Task<V_UserRoleAllInfo> GetAllInfoByIdAsync(int user_role_id);
 
 }

@@ -13,6 +13,18 @@ public class OtherInfoRepository(IFreeSql sql, ILogger<OtherInfoRepository> logg
     return CreateIdentityAsync(entity);
   }
 
+  public async Task<IEnumerable<OtherInfo>> GetAllByTypeAsync(string info_type)
+  {
+    return await _sql.Select<OtherInfo>()
+      .Where(a => a.Info_Type == info_type)
+      .ToListAsync();
+  }
+
+  public async Task<IEnumerable<OtherInfo>> GetSMTPInfoAsync()
+  {
+    return await GetAllByTypeAsync("asf_smtp");
+  }
+
   public async Task<IEnumerable<OtherInfo>> GetAllAsync(string info_type, string info_name)
   {
 
@@ -25,11 +37,11 @@ public class OtherInfoRepository(IFreeSql sql, ILogger<OtherInfoRepository> logg
 
   }
 
-  public async Task<List<V_UserRoleAllInfo>> GetAllInfoByIdAsync(int user_role_id)
+  public async Task<V_UserRoleAllInfo> GetAllInfoByIdAsync(int user_role_id)
   {
     return await _sql.Select<V_UserRoleAllInfo>()
       .Where(a => a.User_role_id == user_role_id)
-      .ToListAsync();
+      .ToOneAsync();
   }
 
 }
