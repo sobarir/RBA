@@ -28,7 +28,7 @@ public class OtherInfoRepository(IFreeSql sql, ILogger<OtherInfoRepository> logg
   public async Task<IEnumerable<OtherInfo>> GetAllAsync(string info_type, string info_name)
   {
 
-    return await _sql.Ado.CommandFluent("asf.fn_get_other_info")
+    return await _sql.Ado.CommandFluent("dbo.fn_get_other_info")
       .CommandType(CommandType.StoredProcedure)
       .CommandTimeout(60)
       .WithParameter("in_info_type", info_type)
@@ -40,7 +40,7 @@ public class OtherInfoRepository(IFreeSql sql, ILogger<OtherInfoRepository> logg
   public async Task<V_UserRoleAllInfo> GetAllInfoByIdAsync(int user_role_id)
   {
     return await _sql.Select<V_UserRoleAllInfo>()
-      .Where(a => a.User_role_id == user_role_id)
+      .Where(a => a.User_Role_Id == user_role_id)
       .ToOneAsync();
   }
 

@@ -51,11 +51,11 @@ public class SendEmailApprEndpoint(
 
     var message = new MimeMessage();
 
-    var requestor = $"{allInfo.Requester_first_name} {allInfo.Requester_last_name}";
-    message.From.Add(new MailboxAddress(requestor, allInfo.Requester_email));
+    var requestor = $"{allInfo.Requester_First_Name} {allInfo.Requester_Last_Name}";
+    message.From.Add(new MailboxAddress(requestor, allInfo.Requester_Email));
 
-    var approver = $"{allInfo.Approver_first_name} {allInfo.Approver_last_name}";
-    message.To.Add(new MailboxAddress(approver, allInfo.Approver_email));
+    var approver = $"{allInfo.Approver_First_Name} {allInfo.Approver_Last_Name}";
+    message.To.Add(new MailboxAddress(approver, allInfo.Approver_Email));
     message.Subject = "How you doin'?";
 
     BodyBuilder builder = new()
@@ -90,17 +90,17 @@ public class SendEmailApprEndpoint(
       body = reader.ReadToEnd();
     }
 
-    body = body.Replace("{request_by}", allInfo.Request_by);
+    body = body.Replace("{request_by}", allInfo.Request_By);
 
-    var requestor = $"{allInfo.Requester_first_name} {allInfo.Requester_last_name}";
+    var requestor = $"{allInfo.Requester_First_Name} {allInfo.Requester_Last_Name}";
     body = body.Replace("{requestor}", requestor);
 
-    body = body.Replace("{plant_cd}", allInfo.Plant_cd);
-    body = body.Replace("{application_cd}", allInfo.Application_cd);
-    body = body.Replace("{app_desc}", allInfo.App_desc);
-    body = body.Replace("{role_name}", allInfo.Role_name);
+    body = body.Replace("{plant_cd}", allInfo.Plant_Cd);
+    body = body.Replace("{application_cd}", allInfo.Application_Cd);
+    body = body.Replace("{app_desc}", allInfo.App_Desc);
+    body = body.Replace("{role_name}", allInfo.Role_Name);
     body = body.Replace("{description}", allInfo.Description);
-    body = body.Replace("{request_justification}", allInfo.Request_justification);
+    body = body.Replace("{request_justification}", allInfo.Request_Justification);
     body = body.Replace("{created_date}", DateTime.Now.ToString("dd-MMM-yyyy"));
 
     return body;

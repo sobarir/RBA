@@ -3,26 +3,26 @@ using Newtonsoft.Json;
 
 namespace RBA.Domain.Entities;
 
-[JsonObject(MemberSerialization.OptIn), Table(Name = "asf.user_role", DisableSyncStructure = true)]
+[JsonObject(MemberSerialization.OptIn), Table(Name = "user_role", DisableSyncStructure = true)]
 public partial class UserRole : IEntity
 {
 
   [JsonProperty, Column(Name = "role_id", IsPrimary = true)]
   public required int Role_Id { get; set; }
 
-  [JsonProperty, Column(Name = "user_cd", StringLength = 50, IsPrimary = true, IsNullable = false)]
+  [JsonProperty, Column(Name = "user_cd", DbType = "varchar(50)", IsPrimary = true, IsNullable = false)]
   public required string User_Cd { get; set; }
 
-  [JsonProperty, Column(Name = "approval_status", StringLength = 50)]
+  [JsonProperty, Column(Name = "approval_status", DbType = "varchar(50)")]
   public string? Approval_Status { get; set; }
 
-  [JsonProperty, Column(Name = "approved_by", StringLength = 50)]
+  [JsonProperty, Column(Name = "approved_by", DbType = "varchar(50)")]
   public string? Approved_By { get; set; }
 
-  [JsonProperty, Column(Name = "approved_date", DbType = "timestamptz")]
+  [JsonProperty, Column(Name = "approved_date")]
   public DateTime? Approved_Date { get; set; }
 
-  [JsonProperty, Column(Name = "approver_reason", StringLength = 100)]
+  [JsonProperty, Column(Name = "approver_reason", DbType = "varchar(100)")]
   public string? Approver_Reason { get; set; }
 
   [JsonProperty, Column(Name = "can_assign")]
@@ -31,22 +31,25 @@ public partial class UserRole : IEntity
   [JsonProperty, Column(Name = "can_change_actions")]
   public bool? Can_Change_Actions { get; set; }
 
-  [JsonProperty, Column(Name = "created_date", DbType = "timestamptz", InsertValueSql = "CURRENT_TIMESTAMP")]
-  public DateTime? Created_Date { get; set; }
+  [JsonProperty, Column(Name = "created_date")]
+  public DateTime Create_dDate { get; set; }
+
+  [JsonProperty, Column(Name = "email_notification", DbType = "varchar(50)", IsNullable = false)]
+  public string Email_Notification { get; set; } = "not send";
 
   [JsonProperty, Column(Name = "is_active")]
-  public bool Is_active { get; set; } = false;
+  public bool Is_Active { get; set; } = true;
 
-  [JsonProperty, Column(Name = "last_edit_date", DbType = "timestamptz", InsertValueSql = "CURRENT_TIMESTAMP")]
+  [JsonProperty, Column(Name = "last_edit_date")]
   public DateTime? Last_Edit_Date { get; set; }
 
-  [JsonProperty, Column(Name = "request_by", StringLength = 50)]
+  [JsonProperty, Column(Name = "request_by", DbType = "varchar(50)", IsNullable = false)]
   public string? Request_By { get; set; }
 
-  [JsonProperty, Column(Name = "request_justification", StringLength = 100)]
+  [JsonProperty, Column(Name = "request_justification", DbType = "varchar(100)", IsNullable = false)]
   public string? Request_Justification { get; set; }
 
-  [JsonProperty, Column(Name = "user_role_id", IsIdentity = true, InsertValueSql = "nextval('asf.user_role_user_role_id_seq'::regclass)")]
+  [JsonProperty, Column(Name = "user_role_id", IsIdentity = true)]
   public int User_Role_Id { get; set; }
 
 }

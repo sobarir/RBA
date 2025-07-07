@@ -3,27 +3,27 @@ using FreeSql.DataAnnotations;
 
 namespace RBA.Domain.Entities;
 
-[JsonObject(MemberSerialization.OptIn), Table(Name = "asf.fn_get_user_available_role", DisableSyncStructure = true)]
+[JsonObject(MemberSerialization.OptIn), Table(Name = "dbo.fn_get_user_available_role", DisableSyncStructure = true)]
 public class V_UserAvailableRole
 {
 
   [JsonProperty, Column(Name = "application_cd")]
-  public string? ApplicationCd { get; set; }
+  public string? Application_Cd { get; set; }
 
   [JsonProperty, Column(Name = "app_description")]
-  public string? AppDescription { get; set; }
+  public string? App_Description { get; set; }
 
   [JsonProperty, Column(Name = "role_id")]
-  public int? RoleId { get; set; }
+  public int? Role_Id { get; set; }
 
   [JsonProperty, Column(Name = "role_name")]
-  public string? RoleName { get; set; }
+  public string? Role_Name { get; set; }
 
   [JsonProperty, Column(Name = "role_description")]
-  public string? RoleDescription { get; set; }
+  public string? Role_Description { get; set; }
 
   [JsonProperty, Column(Name = "plant_cd")]
-  public string? PlantCd { get; set; }
+  public string? Plant_Cd { get; set; }
 }
 
 

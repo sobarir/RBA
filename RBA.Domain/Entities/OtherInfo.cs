@@ -3,26 +3,26 @@ using Newtonsoft.Json;
 
 namespace RBA.Domain.Entities;
 
-[JsonObject(MemberSerialization.OptIn), Table(Name = "asf.other_info", DisableSyncStructure = true)]
-public partial class OtherInfo
+[JsonObject(MemberSerialization.OptIn), Table(Name = "other_info", DisableSyncStructure = true)]
+public partial class OtherInfo : IEntity
 {
 
-  [JsonProperty, Column(Name = "info_id", IsPrimary = true, IsIdentity = true, InsertValueSql = "nextval('asf.other_info_info_id_seq'::regclass)")]
-  public int Info_Id { get; set; }
+  [JsonProperty, Column(Name = "info_id", IsPrimary = true, IsIdentity = true)]
+  public required int Info_Id { get; set; }
 
-  [JsonProperty, Column(Name = "info_name", StringLength = 100, IsNullable = false)]
+  [JsonProperty, Column(Name = "info_name", DbType = "varchar(100)")]
   public string? Info_Name { get; set; }
 
-  [JsonProperty, Column(Name = "info_type", StringLength = 30, IsNullable = false)]
+  [JsonProperty, Column(Name = "info_type", DbType = "varchar(30)")]
   public string? Info_Type { get; set; }
 
-  [JsonProperty, Column(Name = "info_value1", StringLength = 100)]
+  [JsonProperty, Column(Name = "info_value1", DbType = "varchar(100)")]
   public string? Info_Value1 { get; set; }
 
-  [JsonProperty, Column(Name = "info_value2", StringLength = 100)]
+  [JsonProperty, Column(Name = "info_value2", DbType = "varchar(100)")]
   public string? Info_Value2 { get; set; }
 
   [JsonProperty, Column(Name = "sort_order")]
-  public int Sort_Order { get; set; }
+  public int? Sort_Order { get; set; }
 
 }

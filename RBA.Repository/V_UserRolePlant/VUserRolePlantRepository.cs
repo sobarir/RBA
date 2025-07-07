@@ -42,12 +42,12 @@ public class VUserRolePlantRepository(IFreeSql sql, ILogger<RepositoryBase<V_Use
         var v = new V_UserAvailableRole();
         var row = table.Rows[i];
 
-        v.ApplicationCd = Convert.ToString(row["application_cd"]);
-        v.AppDescription = Convert.ToString(row["app_description"]);
-        v.RoleId = Convert.ToInt32(row["role_id"]);
-        v.RoleName = Convert.ToString(row["role_name"]);
-        v.RoleDescription = Convert.ToString(row["role_description"]);
-        v.PlantCd = Convert.ToString(row["plant_cd"]);
+        v.Application_Cd = Convert.ToString(row["application_cd"]);
+        v.App_Description = Convert.ToString(row["app_description"]);
+        v.Role_Id = Convert.ToInt32(row["role_id"]);
+        v.Role_Name = Convert.ToString(row["role_name"]);
+        v.Role_Description = Convert.ToString(row["role_description"]);
+        v.Plant_Cd = Convert.ToString(row["plant_cd"]);
 
         result.Add(v);
       }
