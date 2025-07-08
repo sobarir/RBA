@@ -11,7 +11,7 @@ public partial class UserAllowedPlant : IEntity
   public required string Plant_Cd { get; set; }
 
   [JsonProperty, Column(Name = "user_cd", DbType = "varchar(50)", IsPrimary = true, IsNullable = false)]
-  public string? User_Cd { get; set; }
+  public required string User_Cd { get; set; }
 
   [JsonProperty, Column(Name = "created_date")]
   public DateTime Created_Date { get; set; }
