@@ -3,11 +3,11 @@ using Newtonsoft.Json;
 
 namespace RBA.Domain.Entities;
 
-[JsonObject(MemberSerialization.OptIn), Table(Name = "application", DisableSyncStructure = true)]
+[JsonObject(MemberSerialization.OptIn), Table(Name = "rba.application", DisableSyncStructure = true)]
 public partial class Application : IEntity
 {
 
-  [JsonProperty, Column(Name = "application_Cd", DbType = "varchar(3)", IsPrimary = true, IsNullable = false)]
+  [JsonProperty, Column(Name = "application_cd", DbType = "varchar(3)", IsPrimary = true, IsNullable = false)]
   public required string Application_Cd { get; set; }
 
   [JsonProperty, Column(Name = "application_owner", DbType = "varchar(50)")]

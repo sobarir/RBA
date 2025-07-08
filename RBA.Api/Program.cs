@@ -24,7 +24,7 @@ var connectionString = config.GetConnectionString("DefaultConnection");
 Func<IServiceProvider, IFreeSql> fsqlFactory = r =>
 {
   IFreeSql fsql = new FreeSql.FreeSqlBuilder()
-    .UseConnectionString(FreeSql.DataType.PostgreSQL, connectionString)
+    .UseConnectionString(FreeSql.DataType.SqlServer, connectionString)
     .UseMonitorCommand(cmd => logger.Information($"Sql：{cmd.CommandText}"))
     .UseAutoSyncStructure(false)
     .Build();

@@ -3,14 +3,14 @@ using Newtonsoft.Json;
 
 namespace RBA.Domain.Entities;
 
-[JsonObject(MemberSerialization.OptIn), Table(Name = "action", DisableSyncStructure = true)]
+[JsonObject(MemberSerialization.OptIn), Table(Name = "rba.action", DisableSyncStructure = true)]
 public partial class Action : IEntity
 {
 
   [JsonProperty, Column(Name = "action_id", IsPrimary = true, IsIdentity = true)]
   public required int Action_Id { get; set; }
 
-  [JsonProperty, Column(Name = "application_Cd", DbType = "varchar(3)", IsNullable = false)]
+  [JsonProperty, Column(Name = "application_cd", DbType = "varchar(3)", IsNullable = false)]
   public string? Application_Cd { get; set; }
 
   [JsonProperty, Column(Name = "created_date")]

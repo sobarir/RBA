@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace RBA.Domain.Entities;
 
-[JsonObject(MemberSerialization.OptIn), Table(Name = "v_application_role_action", DisableSyncStructure = true)]
+[JsonObject(MemberSerialization.OptIn), Table(Name = "rba.v_application_role_action", DisableSyncStructure = true)]
 public partial class V_ApplicationRoleAction : IEntity
 {
 

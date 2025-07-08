@@ -3,7 +3,7 @@ using FreeSql.DataAnnotations;
 
 namespace RBA.Domain.Entities;
 
-[JsonObject(MemberSerialization.OptIn), Table(Name = "dbo.fn_get_user_available_role", DisableSyncStructure = true)]
+[JsonObject(MemberSerialization.OptIn), Table(Name = "rba.fn_get_user_available_role", DisableSyncStructure = true)]
 public class V_UserAvailableRole
 {
 
