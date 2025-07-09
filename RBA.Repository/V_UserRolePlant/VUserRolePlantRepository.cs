@@ -25,8 +25,8 @@ public class VUserRolePlantRepository(IFreeSql sql, ILogger<RepositoryBase<V_Use
 
   public async Task<List<V_UserAvailableRole>> GetAllUserAvailableRolesAsync(string user_cd, string app_code)
   {
-    var table = await _sql.Ado.CommandFluent("asf.fn_get_user_available_role")
-      .CommandType(CommandType.StoredProcedure)
+    var table = await _sql.Ado.CommandFluent("select * from rba.fn_get_user_available_role (@in_user_cd, @in_app_code)")
+      //.CommandType(CommandType.StoredProcedure)
       .CommandTimeout(60)
       .WithParameter("in_user_cd", user_cd)
       .WithParameter("in_app_code", app_code)

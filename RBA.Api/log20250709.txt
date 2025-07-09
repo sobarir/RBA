@@ -1,0 +1,24 @@
+[19:36:13 INF] Registered 49 endpoints in 3.769 milliseconds. <s:FastEndpoints.StartupTimer>
+[19:36:14 INF] Now listening on: https://localhost:7211 <s:Microsoft.Hosting.Lifetime>
+[19:36:14 INF] Now listening on: http://localhost:5158 <s:Microsoft.Hosting.Lifetime>
+[19:36:14 INF] Application started. Press Ctrl+C to shut down. <s:Microsoft.Hosting.Lifetime>
+[19:36:14 INF] Hosting environment: Development <s:Microsoft.Hosting.Lifetime>
+[19:36:14 INF] Content root path: C:\Rahmat\RBA\RBA.Api <s:Microsoft.Hosting.Lifetime>
+[19:38:36 INF] Registered 49 endpoints in 1.157 milliseconds. <s:FastEndpoints.StartupTimer>
+[19:38:36 INF] Now listening on: https://localhost:7211 <s:Microsoft.Hosting.Lifetime>
+[19:38:36 INF] Now listening on: http://localhost:5158 <s:Microsoft.Hosting.Lifetime>
+[19:38:36 INF] Application started. Press Ctrl+C to shut down. <s:Microsoft.Hosting.Lifetime>
+[19:38:36 INF] Hosting environment: Development <s:Microsoft.Hosting.Lifetime>
+[19:38:36 INF] Content root path: C:\Rahmat\RBA\RBA.Api <s:Microsoft.Hosting.Lifetime>
+[19:39:10 INF] Registered 49 endpoints in 961 milliseconds. <s:FastEndpoints.StartupTimer>
+[19:39:10 INF] Now listening on: https://localhost:7211 <s:Microsoft.Hosting.Lifetime>
+[19:39:10 INF] Now listening on: http://localhost:5158 <s:Microsoft.Hosting.Lifetime>
+[19:39:10 INF] Application started. Press Ctrl+C to shut down. <s:Microsoft.Hosting.Lifetime>
+[19:39:10 INF] Hosting environment: Development <s:Microsoft.Hosting.Lifetime>
+[19:39:10 INF] Content root path: C:\Rahmat\RBA\RBA.Api <s:Microsoft.Hosting.Lifetime>
+[19:40:57 INF] Registered 49 endpoints in 1.380 milliseconds. <s:FastEndpoints.StartupTimer>
+[19:40:57 INF] Now listening on: https://localhost:7211 <s:Microsoft.Hosting.Lifetime>
+[19:40:57 INF] Now listening on: http://localhost:5158 <s:Microsoft.Hosting.Lifetime>
+[19:40:57 INF] Application started. Press Ctrl+C to shut down. <s:Microsoft.Hosting.Lifetime>
+[19:40:57 INF] Hosting environment: Development <s:Microsoft.Hosting.Lifetime>
+[19:40:57 INF] Content root path: C:\Rahmat\RBA\RBA.Api <s:Microsoft.Hosting.Lifetime>

@@ -11,4 +11,11 @@ public class ActionRepository(IFreeSql sql, ILogger<ActionRepository> logger)
     return CreateIdentityAsync(entity);
   }
 
+  public async Task<IEnumerable<Domain.Entities.Action>> GetByAppIdAsync(string application_cd)
+  {
+    return await _sql.Select<Domain.Entities.Action>()
+      .Where(a => a.Application_Cd == application_cd)
+      .ToListAsync();
+  }
+
 }

@@ -28,8 +28,8 @@ public class OtherInfoRepository(IFreeSql sql, ILogger<OtherInfoRepository> logg
   public async Task<IEnumerable<OtherInfo>> GetAllAsync(string info_type, string info_name)
   {
 
-    return await _sql.Ado.CommandFluent("dbo.fn_get_other_info")
-      .CommandType(CommandType.StoredProcedure)
+    return await _sql.Ado.CommandFluent("select * from rba.fn_get_other_info (@in_info_type, @in_info_name)")
+      //.CommandType(CommandType.StoredProcedure)
       .CommandTimeout(60)
       .WithParameter("in_info_type", info_type)
       .WithParameter("in_info_name", info_name)
