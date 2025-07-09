@@ -44,21 +44,24 @@ public class RepositoryBase<T>(IFreeSql sql, ILogger<RepositoryBase<T>> logger) 
   public virtual async Task<bool> DeleteAsync(object? id)
   {
     _logger.LogInformation("DeleteAsync {id}", id);
-    var wheres = ComposeWheres(id);
-    return await _sql.Delete<T>().Where(wheres.Item1, wheres.Item2).ExecuteAffrowsAsync() > 0;
+    //var wheres = ComposeWheres(id);
+    return await _sql.Delete<T>()
+      //.Where(wheres.Item1, wheres.Item2)
+      .ExecuteAffrowsAsync() > 0;
   }
 
   public virtual async Task<bool> UpdateAsync(T entity)
   {
     _logger.LogInformation("UpdateAsync {entity}", entity.ToJson());
 
-    var col = GetKeyColumn();
-    var id = col.GetValue(entity);
+    //var col = GetKeyColumn();
+    //var id = col.GetValue(entity);
 
-    var wheres = ComposeWheres(col, id);
+    //var wheres = ComposeWheres(col, id);
     return await _sql.Update<T>()
       .SetSourceIgnore(entity, col => col == null)
-      .Where(wheres.Item1, wheres.Item2).ExecuteAffrowsAsync() > 0;
+      //.Where(wheres.Item1, wheres.Item2)
+      .ExecuteAffrowsAsync() > 0;
   }
 
   private static (string, object?) ComposeWheres(object? id)
@@ -71,6 +74,7 @@ public class RepositoryBase<T>(IFreeSql sql, ILogger<RepositoryBase<T>> logger) 
     return ($"{col.Name} = @{col.Name}", val);
   }
 
+  /*
   private static (string, object?) ComposeWheres(System.Reflection.PropertyInfo col, object? id)
   {
     var val = new Dictionary<string, object?>
@@ -79,6 +83,7 @@ public class RepositoryBase<T>(IFreeSql sql, ILogger<RepositoryBase<T>> logger) 
     };
     return ($"{col.Name} = @{col.Name}", val);
   }
+  */
 
   private static System.Reflection.PropertyInfo GetKeyColumn()
   {

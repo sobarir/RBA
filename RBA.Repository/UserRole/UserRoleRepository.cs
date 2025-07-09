@@ -27,7 +27,7 @@ public class UserRoleRepository(IFreeSql sql, ILogger<RepositoryBase<UserRole>> 
   {
     _logger.LogInformation("DeleteAsync {role_id} and {user_cd}", role_id, user_cd);
     return await _sql.Delete<UserRole>()
-      .Where(a => a.Role_Id == role_id && a.User_Cd == user_cd)
+      //.Where(a => a.Role_Id == role_id && a.User_Cd == user_cd)
       .ExecuteAffrowsAsync() > 0;
   }
 
@@ -36,7 +36,7 @@ public class UserRoleRepository(IFreeSql sql, ILogger<RepositoryBase<UserRole>> 
     _logger.LogInformation("UpdateAsync {entity}", entity.ToJson());
     return await _sql.Update<UserRole>()
       .SetSourceIgnore(entity, col => col == null)
-      .Where(a => a.Role_Id == entity.Role_Id && a.User_Cd == entity.User_Cd)
+      //.Where(a => a.Role_Id == entity.Role_Id && a.User_Cd == entity.User_Cd)
       .ExecuteAffrowsAsync() > 0;
   }
 

@@ -19,7 +19,7 @@ public class UserAllowedPlantRepository(IFreeSql sql, ILogger<RepositoryBase<Use
   {
     _logger.LogInformation("DeleteAsync {user_cd} and {plant_cd}", user_cd, plant_cd);
     return await _sql.Delete<UserAllowedPlant>()
-      .Where(a => a.User_Cd == user_cd && a.Plant_Cd == plant_cd)
+      //.Where(a => a.User_Cd == user_cd && a.Plant_Cd == plant_cd)
       .ExecuteAffrowsAsync() > 0;
   }
 
@@ -28,7 +28,7 @@ public class UserAllowedPlantRepository(IFreeSql sql, ILogger<RepositoryBase<Use
     _logger.LogInformation("UpdateAsync {entity}", entity.ToJson());
     return await _sql.Update<UserAllowedPlant>()
       .SetSourceIgnore(entity, col => col == null)
-      .Where(a => a.User_Cd == entity.User_Cd && a.Plant_Cd == entity.Plant_Cd)
+      //.Where(a => a.User_Cd == entity.User_Cd && a.Plant_Cd == entity.Plant_Cd)
       .ExecuteAffrowsAsync() > 0;
   }
 

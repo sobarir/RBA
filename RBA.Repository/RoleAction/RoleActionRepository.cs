@@ -26,7 +26,7 @@ public class RoleActionRepository(IFreeSql sql, ILogger<RepositoryBase<RoleActio
   {
     _logger.LogInformation("DeleteAsync {role_id} and {action_id}", role_id, action_id);
     return await _sql.Delete<RoleAction>()
-      .Where(a => a.Role_Id == role_id && a.Action_Id == action_id)
+      //.Where(a => a.Role_Id == role_id && a.Action_Id == action_id)
       .ExecuteAffrowsAsync() > 0;
   }
 
@@ -35,7 +35,7 @@ public class RoleActionRepository(IFreeSql sql, ILogger<RepositoryBase<RoleActio
     _logger.LogInformation("UpdateAsync {entity}", entity.ToJson());
     return await _sql.Update<RoleAction>()
       .SetSourceIgnore(entity, col => col == null)
-      .Where(a => a.Role_Id == entity.Role_Id && a.Action_Id == entity.Action_Id)
+      //.Where(a => a.Role_Id == entity.Role_Id && a.Action_Id == entity.Action_Id)
       .ExecuteAffrowsAsync() > 0;
   }
 
