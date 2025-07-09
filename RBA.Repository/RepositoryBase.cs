@@ -15,6 +15,7 @@ public class RepositoryBase<T>(IFreeSql sql, ILogger<RepositoryBase<T>> logger) 
   public virtual async Task<T> CreateAsync(T entity)
   {
     _logger.LogInformation("CreateAsync {entity}", entity.ToJson());
+    SetCreatedDateColumn(entity);
     await _sql.Insert(entity).ExecuteAffrowsAsync();
     return entity;
   }
@@ -22,6 +23,7 @@ public class RepositoryBase<T>(IFreeSql sql, ILogger<RepositoryBase<T>> logger) 
   protected async Task<T> CreateIdentityAsync(T entity)
   {
     _logger.LogInformation("CreateAsync {entity}", entity.ToJson());
+    SetCreatedDateColumn(entity);
     var id = await _sql.Insert(entity).ExecuteIdentityAsync();
     var col = GetKeyColumn();
     col.SetValue(entity, Convert.ChangeType(id, col.PropertyType));
@@ -92,6 +94,30 @@ public class RepositoryBase<T>(IFreeSql sql, ILogger<RepositoryBase<T>> logger) 
       }
     }
     throw new InvalidOperationException($"{typeof(T).FullName} doesn't have key!");
+  }
+
+  private static void SetCreatedDateColumn(T entity)
+  {
+    System.Reflection.PropertyInfo[] properties = typeof(T).GetProperties();
+    foreach (System.Reflection.PropertyInfo property in properties)
+    {
+      if (property.Name == "created_date")
+      {
+        property.SetValue(null, null, null);
+      }
+      object[] columnAttributes = property.GetCustomAttributes(typeof(ColumnAttribute), false);
+      foreach (object attribute in columnAttributes)
+      {
+        ColumnAttribute columnAttribute = (ColumnAttribute)attribute;
+        if (columnAttribute.Name != "created_date") continue;
+        if ((property.GetValue(entity) == null) || 
+          (Convert.ToDateTime(property.GetValue(entity)) == DateTime.MinValue)
+        )
+        {
+          property.SetValue((T)entity, DateTime.Now);
+        }
+      }
+    }
   }
 
 }

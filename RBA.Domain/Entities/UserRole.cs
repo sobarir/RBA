@@ -32,7 +32,7 @@ public partial class UserRole : IEntity
   public bool? Can_Change_Actions { get; set; }
 
   [JsonProperty, Column(Name = "created_date")]
-  public DateTime Create_dDate { get; set; }
+  public DateTime Created_Date { get; set; }
 
   [JsonProperty, Column(Name = "email_notification", DbType = "varchar(50)", IsNullable = false)]
   public string Email_Notification { get; set; } = "not send";

@@ -22,3 +22,24 @@
 [19:40:57 INF] Application started. Press Ctrl+C to shut down. <s:Microsoft.Hosting.Lifetime>
 [19:40:57 INF] Hosting environment: Development <s:Microsoft.Hosting.Lifetime>
 [19:40:57 INF] Content root path: C:\Rahmat\RBA\RBA.Api <s:Microsoft.Hosting.Lifetime>
+[20:55:32 INF] Registered 49 endpoints in 3.093 milliseconds. <s:FastEndpoints.StartupTimer>
+[20:55:33 INF] Now listening on: https://localhost:7211 <s:Microsoft.Hosting.Lifetime>
+[20:55:33 INF] Now listening on: http://localhost:5158 <s:Microsoft.Hosting.Lifetime>
+[20:55:33 INF] Application started. Press Ctrl+C to shut down. <s:Microsoft.Hosting.Lifetime>
+[20:55:33 INF] Hosting environment: Development <s:Microsoft.Hosting.Lifetime>
+[20:55:33 INF] Content root path: C:\Rahmat\RBA\RBA.Api <s:Microsoft.Hosting.Lifetime>
+[20:55:53 INF] CreateAsync {"Action_Id":0,"Application_Cd":"cdm","Created_Date":"0001-01-01T00:00:00","Description":"Action_004","Is_Active":true,"Last_Edit_Date":null,"Name":"Action_004"} <s:RBA.Repository.ActionRepository>
+[20:56:42 INF] Registered 49 endpoints in 1.145 milliseconds. <s:FastEndpoints.StartupTimer>
+[20:56:43 INF] Now listening on: https://localhost:7211 <s:Microsoft.Hosting.Lifetime>
+[20:56:43 INF] Now listening on: http://localhost:5158 <s:Microsoft.Hosting.Lifetime>
+[20:56:43 INF] Application started. Press Ctrl+C to shut down. <s:Microsoft.Hosting.Lifetime>
+[20:56:43 INF] Hosting environment: Development <s:Microsoft.Hosting.Lifetime>
+[20:56:43 INF] Content root path: C:\Rahmat\RBA\RBA.Api <s:Microsoft.Hosting.Lifetime>
+[20:57:04 INF] CreateAsync {"Action_Id":0,"Application_Cd":"cdm","Created_Date":"0001-01-01T00:00:00","Description":"Action_005","Is_Active":true,"Last_Edit_Date":null,"Name":"Action_005"} <s:RBA.Repository.ActionRepository>
+[20:59:27 INF] Registered 49 endpoints in 3.119 milliseconds. <s:FastEndpoints.StartupTimer>
+[20:59:27 INF] Now listening on: https://localhost:7211 <s:Microsoft.Hosting.Lifetime>
+[20:59:27 INF] Now listening on: http://localhost:5158 <s:Microsoft.Hosting.Lifetime>
+[20:59:27 INF] Application started. Press Ctrl+C to shut down. <s:Microsoft.Hosting.Lifetime>
+[20:59:27 INF] Hosting environment: Development <s:Microsoft.Hosting.Lifetime>
+[20:59:27 INF] Content root path: C:\Rahmat\RBA\RBA.Api <s:Microsoft.Hosting.Lifetime>
+[20:59:35 INF] CreateAsync {"Action_Id":0,"Application_Cd":"cdm","Created_Date":"0001-01-01T00:00:00","Description":"Action_006","Is_Active":true,"Last_Edit_Date":null,"Name":"Action_006"} <s:RBA.Repository.ActionRepository>
