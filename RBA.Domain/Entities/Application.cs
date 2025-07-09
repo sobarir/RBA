@@ -20,7 +20,7 @@ public partial class Application : IEntity
   public string? Description { get; set; }
 
   [JsonProperty, Column(Name = "is_active")]
-  public int? Is_Active { get; set; } = 1;
+  public bool? Is_Active { get; set; } = true;
 
   [JsonProperty, Column(Name = "last_edit_date")]
   public DateTime? Last_Edit_Date { get; set; }
