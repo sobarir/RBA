@@ -32,7 +32,7 @@ public partial class V_ApplicationRoleAction : IEntity
   public bool? Is_Active_Action { get; set; }
 
   [JsonProperty, Column(Name = "is_active_application")]
-  public int? Is_Active_Application { get; set; }
+  public bool? Is_Active_Application { get; set; }
 
   [JsonProperty, Column(Name = "is_active_role_action")]
   public bool? Is_Active_Role_Action { get; set; }
