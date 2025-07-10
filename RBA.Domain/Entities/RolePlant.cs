@@ -26,7 +26,7 @@ public partial class RolePlant : IEntity
   public string? Approver_Reason { get; set; }
 
   [JsonProperty, Column(Name = "created_date")]
-  public DateTime Created_Date { get; set; }
+  public DateTime? Created_Date { get; set; }
 
   [JsonProperty, Column(Name = "description", DbType = "varchar(100)")]
   public string? Description { get; set; }

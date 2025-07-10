@@ -11,4 +11,6 @@ public interface IVUserRolePlantRepository : IRepositoryBase<V_UserRolePlant>
 
   Task<List<V_UserAvailableRole>> GetAllUserAvailableRolesAsync(string user_cd, string app_code);
 
+  Task<List<V_RequestByOwner>> GetRequestByOwnerAsync(string owner_cd);
+
 }

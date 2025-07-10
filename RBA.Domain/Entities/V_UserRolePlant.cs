@@ -29,7 +29,7 @@ public partial class V_UserRolePlant
   public bool? Can_Change_Actions { get; set; }
 
   [JsonProperty, Column(Name = "created_date")]
-  public DateTime Created_Date { get; set; }
+  public DateTime? Created_Date { get; set; }
 
   [JsonProperty, Column(Name = "description", DbType = "varchar(100)")]
   public string? Description { get; set; }

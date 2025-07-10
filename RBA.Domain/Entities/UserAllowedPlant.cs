@@ -14,7 +14,7 @@ public partial class UserAllowedPlant : IEntity
   public required string User_Cd { get; set; }
 
   [JsonProperty, Column(Name = "created_date")]
-  public DateTime Created_Date { get; set; }
+  public DateTime? Created_Date { get; set; }
 
   [JsonProperty, Column(Name = "is_active")]
   public bool? Is_Active { get; set; } = true;

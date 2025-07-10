@@ -14,7 +14,7 @@ public partial class RoleAction : IEntity
   public int Role_Id { get; set; }
 
   [JsonProperty, Column(Name = "created_date")]
-  public DateTime Created_Date { get; set; }
+  public DateTime? Created_Date { get; set; }
 
   [JsonProperty, Column(Name = "is_active")]
   public bool? Is_Active { get; set; } = true;

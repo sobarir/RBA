@@ -14,7 +14,7 @@ public partial class Application : IEntity
   public string? Application_Owner { get; set; }
 
   [JsonProperty, Column(Name = "created_date")]
-  public DateTime Created_Date { get; set; }
+  public DateTime? Created_Date { get; set; }
 
   [JsonProperty, Column(Name = "description", DbType = "varchar(100)")]
   public string? Description { get; set; }
