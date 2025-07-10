@@ -44,7 +44,6 @@ public class UserRoleRepository(IFreeSql sql, ILogger<RepositoryBase<UserRole>> 
   {
 
     return await _sql.Ado.CommandFluent("select * from rba.fn_get_user_roles_by_months_ago (@in_months_ago, @in_user_cd)")
-      //.CommandType(CommandType.StoredProcedure)
       .CommandTimeout(60)
       .WithParameter("in_months_ago", month)
       .WithParameter("in_user_cd", user_cd)

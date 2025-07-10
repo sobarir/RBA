@@ -1,12 +1,12 @@
-﻿using Microsoft.AspNetCore.Authorization;
-
-using FastEndpoints;
+﻿using FastEndpoints;
 using MailKit.Net.Smtp;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Components.Forms;
 using MimeKit;
-
 using RBA.Api.Contracts;
 using RBA.Domain.Entities;
 using RBA.Repository;
+using System.Text.RegularExpressions;
 
 namespace RBA.Api.EndPoints.Action;
 
@@ -27,11 +27,13 @@ public class SendEmailApprEndpoint(
 
     var allInfo = await _repositoryOI.GetAllInfoByIdAsync(Convert.ToInt32(req.id));
     var smtpInfo = await _repositoryOI.GetSMTPInfoAsync();
+    var apprvInfo = await _repositoryOI.GetApprvInfoAsync();
+    var emailInfo = await _repositoryOI.GetEmailInfoAsync();
 
-    SendEmail(allInfo, smtpInfo);
+    SendEmail(allInfo, smtpInfo, apprvInfo, emailInfo);
 
     var entity = await _repository.GetByIdAsync(Convert.ToInt32(req.id));
-    entity.Approval_Status = "sent to approver";
+    entity.Email_Notification = "sent to approver";
 
     var succeed = await _repository.UpdateAsync(entity);
 
@@ -45,18 +47,56 @@ public class SendEmailApprEndpoint(
 
   }
 
-  private void SendEmail(V_UserRoleAllInfo allInfo, IEnumerable<OtherInfo> smtpInfo)
+  private static string ExtractEmailName(string? email)
   {
-    string body = PopulateBody(allInfo);
+
+    if (string.IsNullOrWhiteSpace(email) || !email.Contains('@'))
+      throw new ArgumentException("Invalid CC email address.");
+
+    string localPart = email.Split('@')[0];
+    string normalized = localPart.Replace('.', ' ');
+
+    string[] words = normalized.Split([' '], StringSplitOptions.RemoveEmptyEntries);
+
+    for (int i = 0; i < words.Length; i++)
+    {
+      var word = words[i].Trim();
+      words[i] = char.ToUpper(word[0]) + word[1..].ToLower();
+    }
+
+    return string.Join(" ", words);
+  }
+
+  private void SendEmail(
+    V_UserRoleAllInfo allInfo,
+    IEnumerable<OtherInfo> smtpInfo,
+    IEnumerable<OtherInfo> apprvInfo,
+    IEnumerable<OtherInfo> emailInfo
+  )
+  {
+    string body = PopulateBody(allInfo, apprvInfo);
 
     var message = new MimeMessage();
 
     var requestor = $"{allInfo.Requester_First_Name} {allInfo.Requester_Last_Name}";
-    message.From.Add(new MailboxAddress(requestor, allInfo.Requester_Email));
+
+    var requestorEmail = smtpInfo.Where(a => a.Info_Name == "emailFrom").FirstOrDefault()?.Info_Value1;
+    message.From.Add(new MailboxAddress(requestor, requestorEmail));
 
     var approver = $"{allInfo.Approver_First_Name} {allInfo.Approver_Last_Name}";
     message.To.Add(new MailboxAddress(approver, allInfo.Approver_Email));
-    message.Subject = "How you doin'?";
+
+    var ccAddrs = emailInfo.Where(a => a.Info_Name == "emailCc");
+    foreach (var ccAddr in ccAddrs)
+    {
+      var ccEmail = ccAddr?.Info_Value1;
+      var ccName = ExtractEmailName(ccEmail);
+      message.Cc.Add(new MailboxAddress(ccName, ccEmail));
+    }
+
+    var title = emailInfo.Where(a => a.Info_Name == "title").FirstOrDefault()?.Info_Value1;
+    title = $"{title} {allInfo.Application_Cd?.ToUpperInvariant()}";
+    message.Subject = title;
 
     BodyBuilder builder = new()
     {
@@ -78,7 +118,7 @@ public class SendEmailApprEndpoint(
     client.Disconnect(true);
   }
 
-  private string PopulateBody(V_UserRoleAllInfo allInfo)
+  private string PopulateBody(V_UserRoleAllInfo allInfo, IEnumerable<OtherInfo> apprvInfo)
   {
 
     string contentRootPath = _hostingEnvironment.ContentRootPath;
@@ -102,6 +142,10 @@ public class SendEmailApprEndpoint(
     body = body.Replace("{description}", allInfo.Description);
     body = body.Replace("{request_justification}", allInfo.Request_Justification);
     body = body.Replace("{created_date}", DateTime.Now.ToString("dd-MMM-yyyy"));
+
+    var apprvLink = apprvInfo.Where(a => a.Info_Name == "form_name").FirstOrDefault()?.Info_Value1;
+    apprvLink = $"{apprvLink}/{allInfo.User_Role_Id}";
+    body = body.Replace("{apprv_link}", apprvLink);
 
     return body;
   }

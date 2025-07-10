@@ -11,6 +11,10 @@ public interface IOtherInfoRepository : IRepositoryBase<OtherInfo>
 
   Task<IEnumerable<OtherInfo>> GetSMTPInfoAsync();
 
+  Task<IEnumerable<OtherInfo>> GetApprvInfoAsync();
+
+  Task<IEnumerable<OtherInfo>> GetEmailInfoAsync();
+
   Task<V_UserRoleAllInfo> GetAllInfoByIdAsync(int user_role_id);
 
 }
