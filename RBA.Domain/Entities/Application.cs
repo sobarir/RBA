@@ -31,4 +31,7 @@ public partial class Application : IEntity
   [JsonProperty, Column(Name = "requires_2fa")]
   public bool? Requires_2fa { get; set; }
 
+  [JsonProperty, Column(Name = "modified_by", DbType = "varchar(50)")]
+  public string? Modified_By { get; set; }
+
 }

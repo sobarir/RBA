@@ -61,4 +61,7 @@ public partial class UserMes : IEntity
   [JsonProperty, Column(Name = "pin_set_date")]
   public DateTime? Pin_Set_Date { get; set; }
 
+  [JsonProperty, Column(Name = "modified_by", DbType = "varchar(50)")]
+  public string? Modified_By { get; set; }
+
 }

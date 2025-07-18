@@ -30,7 +30,7 @@ public class RepositoryBase<T>(IFreeSql sql, ILogger<RepositoryBase<T>> logger) 
     return entity;
   }
 
-  public async Task<IEnumerable<T>> GetAllAsync()
+  public virtual async Task<IEnumerable<T>> GetAllAsync()
   {
     return await _sql.Select<T>().ToListAsync();
   }

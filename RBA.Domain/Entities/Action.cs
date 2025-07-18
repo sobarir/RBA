@@ -28,5 +28,8 @@ public partial class Action : IEntity
   [JsonProperty, Column(Name = "name", DbType = "varchar(100)")]
   public string? Name { get; set; }
 
+  [JsonProperty, Column(Name = "modified_by", DbType = "varchar(50)")]
+  public string? Modified_By { get; set; }
+
 }
 

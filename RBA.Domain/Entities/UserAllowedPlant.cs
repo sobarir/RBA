@@ -22,4 +22,7 @@ public partial class UserAllowedPlant : IEntity
   [JsonProperty, Column(Name = "last_edit_date")]
   public DateTime? Last_Edit_Date { get; set; }
 
+  [JsonProperty, Column(Name = "modified_by", DbType = "varchar(50)")]
+  public string? Modified_By { get; set; }
+
 }
