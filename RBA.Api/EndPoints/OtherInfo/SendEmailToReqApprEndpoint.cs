@@ -9,8 +9,8 @@ using RBA.Repository;
 
 namespace RBA.Api.EndPoints.Action;
 
-[HttpPost("emailtoapprover"), AllowAnonymous]
-public class SendEmailApprEndpoint(
+[HttpPost("emailtoreq_approved"), AllowAnonymous]
+public class SendEmailToReqApprEndpoint(
   IUserRoleRepository repository,
   IOtherInfoRepository repositoryOI,
   IWebHostEnvironment hostingEnvironment
@@ -32,7 +32,7 @@ public class SendEmailApprEndpoint(
     SendEmail(allInfo, smtpInfo, apprvInfo, emailInfo);
 
     var entity = await _repository.GetByIdAsync(Convert.ToInt32(req.id));
-    entity.Email_Notification = "sent to approver";
+    entity.Email_Notification = "sent approved";
 
     var succeed = await _repository.UpdateAsync(entity);
 
@@ -125,15 +125,12 @@ public class SendEmailApprEndpoint(
     string emailPath = Path.Combine(contentRootPath, "Email");
 
     string body = string.Empty;
-    using (StreamReader reader = new($"{emailPath}/email_to_approver.html"))
+    using (StreamReader reader = new($"{emailPath}/email_to_requested_approved.html"))
     {
       body = reader.ReadToEnd();
     }
 
-    body = body.Replace("{request_by}", allInfo.Request_By);
-
-    var requestor = $"{allInfo.Requester_First_Name} {allInfo.Requester_Last_Name}";
-    body = body.Replace("{requestor}", requestor);
+    body = body.Replace("{approved_by}", allInfo.Approved_By);
 
     body = body.Replace("{plant_cd}", allInfo.Plant_Cd);
     body = body.Replace("{application_cd}", allInfo.Application_Cd);
@@ -141,11 +138,7 @@ public class SendEmailApprEndpoint(
     body = body.Replace("{role_name}", allInfo.Role_Name);
     body = body.Replace("{description}", allInfo.Description);
     body = body.Replace("{request_justification}", allInfo.Request_Justification);
-    body = body.Replace("{created_date}", DateTime.Now.ToString("dd-MMM-yyyy"));
-
-    var apprvLink = apprvInfo.Where(a => a.Info_Name == "form_name").FirstOrDefault()?.Info_Value1;
-    apprvLink = $"{apprvLink}/{allInfo.User_Role_Id}";
-    body = body.Replace("{apprv_link}", apprvLink);
+    body = body.Replace("{approved_date}", DateTime.Now.ToString("dd-MMM-yyyy"));
 
     return body;
   }

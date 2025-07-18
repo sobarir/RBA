@@ -48,9 +48,12 @@ public class OtherInfoRepository(IFreeSql sql, ILogger<OtherInfoRepository> logg
 
   public async Task<V_UserRoleAllInfo> GetAllInfoByIdAsync(int user_role_id)
   {
-    return await _sql.Select<V_UserRoleAllInfo>()
-      .Where(a => a.User_Role_Id == user_role_id)
-      .ToOneAsync();
+
+    return await _sql.Ado.CommandFluent("select * from rba.fn_get_all_info_by_id (@in_user_role_id)")
+      .CommandTimeout(60)
+      .WithParameter("in_user_role_id", user_role_id)
+      .QuerySingleAsync<V_UserRoleAllInfo>();
+
   }
 
 }
