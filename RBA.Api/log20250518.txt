@@ -1,6 +1,0 @@
-[22:55:22 INF] Registered 44 endpoints in 2.918 milliseconds. <s:FastEndpoints.StartupTimer>
-[22:55:22 INF] Now listening on: https://localhost:7211 <s:Microsoft.Hosting.Lifetime>
-[22:55:22 INF] Now listening on: http://localhost:5158 <s:Microsoft.Hosting.Lifetime>
-[22:55:22 INF] Application started. Press Ctrl+C to shut down. <s:Microsoft.Hosting.Lifetime>
-[22:55:22 INF] Hosting environment: Development <s:Microsoft.Hosting.Lifetime>
-[22:55:22 INF] Content root path: C:\Rahmat\RBA\RBA.Api <s:Microsoft.Hosting.Lifetime>

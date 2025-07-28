@@ -1,13 +1,15 @@
 ﻿global using FluentValidation;
 
+using System.Text.Json;
+
 using Microsoft.AspNetCore.Authentication.Negotiate;
 
 using FastEndpoints;
 using Serilog;
 
 using RBA.Repository;
-using System.Text.Json;
 using RBA.Api.EndPoints.AD;
+using RBA.Repository.UserAccess;
 
 var builder = WebApplication.CreateBuilder(args);
 var config = builder.Configuration;
@@ -44,6 +46,8 @@ builder.Services.AddSingleton<IVUserRolePlantRepository, VUserRolePlantRepositor
 builder.Services.AddSingleton<IVApplicationRoleActionRepository, VApplicationRoleActionRepository>();
 builder.Services.AddSingleton<IOtherInfoRepository, OtherInfoRepository>();
 builder.Services.AddSingleton<IAuditTrailRepository, AuditTrailRepository>();
+builder.Services.AddSingleton<IVUserAccessRepository, VUserAccessRepository>();
+builder.Services.AddSingleton<IVUserActionRepository, VUserActionRepository>();
 
 builder.Services.AddFastEndpoints(o => o.IncludeAbstractValidators = true);
 builder.Services.AddOpenApi();

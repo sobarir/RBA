@@ -26,4 +26,13 @@ public class RolePlantRepository(IFreeSql sql, ILogger<RolePlantRepository> logg
       .ToListAsync();
   }
 
+  public async Task<IEnumerable<MasPlant>> GetAllPlantsAsync()
+  {
+
+    return await _sql.Ado.CommandFluent("select * from rba.fn_get_all_plants ()")
+      .CommandTimeout(60)
+      .QueryAsync<MasPlant>();
+
+  }
+
 }

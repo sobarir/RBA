@@ -28,6 +28,12 @@ public partial class V_UserRoleAllInfo : IEntity
   [JsonProperty, Column(Name = "approver_email", DbType = "varchar(100)")]
   public string? Approver_Email { get; set; }
 
+  [JsonProperty, Column(Name = "user_first_name", DbType = "varchar(50)", IsNullable = false)]
+  public string? User_First_Name { get; set; }
+
+  [JsonProperty, Column(Name = "user_last_name", DbType = "varchar(50)", IsNullable = false)]
+  public string? User_Last_Name { get; set; }
+
   [JsonProperty, Column(Name = "approver_first_name", DbType = "varchar(50)", IsNullable = false)]
   public string? Approver_First_Name { get; set; }
 

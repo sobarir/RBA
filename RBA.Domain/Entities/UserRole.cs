@@ -52,4 +52,19 @@ public partial class UserRole : IEntity
   [JsonProperty, Column(Name = "user_role_id", IsIdentity = true)]
   public int User_Role_Id { get; set; }
 
+  [JsonProperty, Column(Name = "revoke_justification", DbType = "varchar(100)", IsNullable = true)]
+  public string? Revoke_Justification { get; set; }
+
+  [JsonProperty, Column(Name = "revoke_by", DbType = "varchar(50)", IsNullable = true)]
+  public string? Revoke_By { get; set; }
+
+  [JsonProperty, Column(Name = "revoke_date", IsNullable = true)]
+  public DateTime? Revoke_Date { get; set; }
+
+  [JsonProperty, Column(Name = "revoke_req_by", DbType = "varchar(50)", IsNullable = true)]
+  public string? Revoke_Req_By { get; set; }
+
+  [JsonProperty, Column(Name = "revoke_req_date", IsNullable = true)]
+  public DateTime? Revoke_Req_Date { get; set; }
+
 }
